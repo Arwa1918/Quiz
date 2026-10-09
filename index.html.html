@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How do you like to learn? | آپ کیسے سیکھنا پسند کرتے ہیں؟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F3FF;--ink:#1B1740;--muted:#575283;--surface:#FFFFFF;--line:#D3CDF3;--accent:#5B3FD9;--on-accent:#FFFFFF;--V:#1F6FEB;--A:#D6336C;--K:#2B9348;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14112B;--ink:#F1EEFF;--muted:#B5B0DD;--surface:#1F1B3F;--line:#3A3566;--accent:#A99AFF;--on-accent:#14112B;--V:#6EA8FF;--A:#FF7FAE;--K:#5FD17F}}
+:root[data-theme="dark"]{--bg:#14112B;--ink:#F1EEFF;--muted:#B5B0DD;--surface:#1F1B3F;--line:#3A3566;--accent:#A99AFF;--on-accent:#14112B;--V:#6EA8FF;--A:#FF7FAE;--K:#5FD17F}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,Arial,sans-serif;font-size:18px;line-height:1.5;min-height:100vh}
+main{max-width:680px;margin:0 auto;padding:20px 20px 56px}
+h1,h2,h3{font-family:'Bricolage Grotesque','Figtree',Arial,sans-serif;line-height:1.1;margin:0}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ur{display:block;font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic','Segoe UI',Arial,sans-serif;line-height:2.1;direction:rtl;text-align:right;font-weight:400}
+h1 .ur,h2 .ur,h3 .ur,.btn .ur,.persona .ur{font-weight:700}
+body[data-lang="en"] .ur{display:none}body[data-lang="ur"] .en{display:none}
+body[data-lang="ur"] main{direction:rtl}
+.lang{display:flex;gap:8px;justify-content:flex-end;margin-bottom:12px;flex-wrap:wrap}
+.lang button{background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:20px;padding:4px 14px;font-size:15px;font-weight:700}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn{background:var(--accent);color:var(--on-accent);border:0;border-radius:14px;padding:12px 26px;font-weight:700;font-size:18px;text-align:center}
+.btn .ur{text-align:center}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.circles{position:relative;height:150px;margin:8px 0 12px;direction:ltr}
+.circles i{position:absolute;top:10px;width:120px;height:120px;border-radius:50%;opacity:.9;mix-blend-mode:multiply}
+:root[data-theme="dark"] .circles i{mix-blend-mode:screen}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .circles i{mix-blend-mode:screen}}
+.circles i:nth-child(1){left:0;background:var(--V)}.circles i:nth-child(2){left:70px;background:var(--A)}.circles i:nth-child(3){left:140px;background:var(--K)}
+.start h1{font-size:clamp(38px,9vw,60px);font-weight:800;margin-bottom:14px}
+.start h1 .ur{font-size:.55em;margin-top:4px}
+.start p{max-width:34em;color:var(--muted);margin:0 0 14px}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin:6px 0 24px}
+.bar b{display:block;height:100%;background:var(--accent);transition:width .3s}
+.meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:16px;min-height:34px;gap:10px}
+.meta .en,.meta .ur,.pill .en,.pill .ur{display:inline}
+body[data-lang="en"] .meta .ur,body[data-lang="en"] .pill .ur,body[data-lang="ur"] .meta .en,body[data-lang="ur"] .pill .en{display:none}
+.meta .ur{margin-inline-start:10px;font-size:15px}.pill .ur{margin-inline-start:8px}
+.pill{background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:0 12px;font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+.q{font-size:clamp(26px,6vw,36px);font-weight:700;margin:6px 0 22px}
+.q .ur{font-size:.8em;margin-top:6px}
+.opts{display:grid;gap:12px}
+.opt{text-align:left;background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:16px;padding:12px 20px;font-weight:500;transition:border-color .15s,transform .15s}
+.opt .ur{font-size:.92em}
+.opt:hover{border-color:var(--accent)}
+.opt.on{border-color:var(--accent);background:var(--accent);color:var(--on-accent);transform:scale(.98)}
+.back{margin-top:22px;background:none;border:0;color:var(--muted);text-decoration:underline;padding:6px 0;font-size:16px}
+.persona{font-size:clamp(32px,8vw,48px);font-weight:800;margin:6px 0 10px}
+.persona .ur{font-size:.7em}
+.chart{display:grid;gap:14px;margin:26px 0}
+.row{display:grid;grid-template-columns:130px 1fr 52px;gap:12px;align-items:center}
+.row span{font-weight:700;line-height:1.3}.row .ur{text-align:start}
+.track{height:26px;background:var(--line);border-radius:13px;overflow:hidden;direction:ltr}
+.track b{display:block;height:100%;width:0;border-radius:13px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.row em{font-style:normal;font-weight:700;text-align:end}
+h3{font-size:24px;margin:26px 0 8px}
+ul{padding-inline-start:22px;margin:8px 0}li{margin:6px 0}
+.note{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:14px 18px;color:var(--muted);font-size:16px;margin-top:26px}
+.note .ur{margin-top:8px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+textarea{width:100%;margin-top:12px;font:inherit;font-size:16px;padding:10px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
+.toast{color:var(--muted);font-size:16px;margin-top:10px;min-height:24px}
+@media (max-width:480px){.row{grid-template-columns:96px 1fr 46px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+[hidden]{display:none!important}
+</style></head>
+<body data-lang="both"><main>
+<div class="lang" role="group" aria-label="Language"><button data-l="both" aria-pressed="true">English + اردو</button><button data-l="en" aria-pressed="false">English</button><button data-l="ur" aria-pressed="false">اردو</button></div>
+<section id="start" class="start">
+<div class="circles" aria-hidden="true"><i></i><i></i><i></i></div>
+<h1 data-b="How do you like to learn?|آپ کیسے سیکھنا پسند کرتے ہیں؟"></h1>
+<p data-b="Answer 14 quick questions. Six are just for fun. Your results appear the moment you finish, and nothing is saved or sent anywhere.|14 مختصر سوالات کے جواب دیں۔ چھ صرف تفریح کے لیے ہیں۔ ختم کرتے ہی نتیجہ سامنے آ جائے گا، اور کچھ بھی محفوظ یا کہیں بھیجا نہیں جاتا۔"></p>
+<p style="margin-bottom:26px" data-b="Pick the answer that feels most like you, even if two seem close.|وہ جواب چنیں جو آپ سے سب سے زیادہ ملتا ہو، چاہے دو جواب قریب لگیں۔"></p>
+<button class="btn" id="go" data-b="Start the questions|سوالات شروع کریں"></button>
+</section>
+<section id="quiz" hidden>
+<div class="meta"><span id="count"></span><span class="pill" id="fun" hidden data-b="Just for fun|صرف تفریح کے لیے"></span></div>
+<div class="bar" aria-hidden="true"><b id="prog"></b></div>
+<h2 class="q" id="qtext" aria-live="polite"></h2>
+<div class="opts" id="opts"></div>
+<button class="back" id="back" data-b="Back to the last question|پچھلے سوال پر واپس"></button>
+</section>
+<section id="result" hidden>
+<div class="meta" data-b="Your result|آپ کا نتیجہ"></div>
+<div style="font-size:48px" id="emoji" aria-hidden="true"></div>
+<h1 class="persona" id="persona"></h1>
+<p id="blurb"></p>
+<div class="chart" id="chart"></div>
+<h3 data-b="Try this in your classroom|اپنی کلاس میں آزمائیں"></h3><ul id="tips"></ul>
+<div class="note" data-b="This is a fun self-reflection tool, not a scientific test. Most people use all three ways, and the best way depends on the task. Research has not shown that teaching to one style improves results, so use your result to start a conversation, not to label yourself or your students. Aim for something to see, something to say and something to do in every lesson.|یہ خود شناسی کا ایک تفریحی ذریعہ ہے، سائنسی ٹیسٹ نہیں۔ زیادہ تر لوگ تینوں طریقے استعمال کرتے ہیں، اور بہترین طریقہ کام پر منحصر ہوتا ہے۔ تحقیق سے یہ ثابت نہیں ہوا کہ کسی ایک انداز پر پڑھانے سے نتائج بہتر ہوتے ہیں، اس لیے اپنے نتیجے کو بات چیت کے آغاز کے لیے استعمال کریں، خود کو یا طلبہ کو لیبل دینے کے لیے نہیں۔ ہر سبق میں کچھ دیکھنے، کچھ کہنے اور کچھ کرنے کے لیے رکھیں۔"></div>
+<div class="actions"><button class="btn" id="copy" data-b="Copy my result|میرا نتیجہ کاپی کریں"></button><button class="btn ghost" id="again" data-b="Take it again|دوبارہ کوشش کریں"></button></div>
+<div class="toast" id="toast" role="status"></div>
+</section>
+</main>
+<script>
+var QS=[
+["When I learn something new in a workshop, I like to...",0,"see diagrams, slides or handouts","listen to the speaker and discuss","try it out hands-on right away"],
+["It's a rainy Saturday. My perfect plan is...",1,"a film marathon or a pile of picture-filled magazines","a playlist, a podcast and long phone calls","baking, building something or finishing a puzzle"],
+["When I explain something to students, I tend to...",0,"draw or write it on the board","talk it through","demonstrate it or act it out"],
+["If I could have one superpower, it would be...",1,"a photographic memory for everything I see","hearing any conversation in the world","super-speed to do anything instantly"],
+["When I learn new technology, I...",0,"read the instructions and look at screenshots","ask someone to explain it","play with it and learn by trying"],
+["At a festival, the part I'd remember most is...",1,"the colors and lights","the music and the crowd","the dancing and the rides"],
+["When I'm stuck on a problem, I...",0,"sketch it or make a chart","talk it over with someone","get up and move, or build a model"],
+["I get a brand new board game. I...",1,"study the box and the pictures of the rules","ask someone to explain how it works","start playing and figure it out as I go"],
+["In a long meeting, I'm most likely to...",0,"doodle or look around the room","whisper or comment to someone","fidget or want to stand up"],
+["If I were a classroom item, I'd be...",1,"the whiteboard","the bell","the craft table"],
+["When I plan a lesson, I start by...",0,"making an outline or mind map","thinking through what I will say","planning what students will do"],
+["Before a big day, I calm my nerves by...",1,"picturing everything going well","talking myself through it","pacing, stretching or shaking out my hands"],
+["I find it easiest to remember...",0,"faces and places I have seen","names and things people said","things I did or experienced"],
+["When someone gives me feedback, I prefer...",0,"written notes","a conversation","being shown, then trying again"]
+];
+var QU=[
+["ورکشاپ میں کچھ نیا سیکھتے ہوئے مجھے پسند ہے کہ میں...","خاکے، سلائیڈز یا ہینڈ آؤٹس دیکھوں","مقرر کو سنوں اور بات چیت کروں","فوراً خود عملی طور پر آزماؤں"],
+["بارش والا ہفتہ ہے۔ میرا بہترین پلان ہے...","فلموں کا مارتھن یا تصویروں والے رسالوں کا ڈھیر","گانوں کی پلے لسٹ، پوڈکاسٹ اور لمبی فون کالز","بیکنگ، کچھ بنانا یا پزل مکمل کرنا"],
+["طلبہ کو کچھ سمجھاتے وقت میرا عام طریقہ ہوتا ہے...","بورڈ پر بنانا یا لکھنا","بول کر سمجھانا","کر کے دکھانا یا اداکاری کرنا"],
+["اگر مجھے کوئی ایک سپر پاور مل سکتی تو وہ ہوتی...","ہر دیکھی ہوئی چیز کی تصویری یادداشت","دنیا کی کوئی بھی گفتگو سننے کی صلاحیت","ہر کام فوراً کرنے کی برق رفتاری"],
+["نئی ٹیکنالوجی سیکھتے وقت میرا طریقہ ہوتا ہے...","ہدایات پڑھنا اور اسکرین شاٹس دیکھنا","کسی سے سمجھانے کو کہنا","خود استعمال کر کے سیکھنا"],
+["میلے میں مجھے سب سے زیادہ یاد رہنے والی چیز ہوتی ہے...","رنگ اور روشنیاں","موسیقی اور لوگوں کا شور","رقص اور جھولے"],
+["کسی مسئلے میں پھنس جانے پر میرا طریقہ ہوتا ہے...","خاکہ یا چارٹ بنانا","کسی سے بات کرنا","اٹھ کر چلنا پھرنا یا ماڈل بنانا"],
+["نیا بورڈ گیم ملے تو میرا پہلا قدم ہوتا ہے...","ڈبے اور قواعد کی تصویریں دیکھنا","کسی سے قواعد سمجھنا","کھیلنا شروع کر کے سیکھتے جانا"],
+["لمبی میٹنگ میں میری عادت ہوتی ہے...","ڈرائنگ بنانا یا کمرے میں نظر دوڑانا","کسی سے سرگوشی یا تبصرہ کرنا","ہاتھ پاؤں ہلانا یا کھڑے ہونے کو جی چاہنا"],
+["کلاس روم کی چیزوں میں میری شخصیت سے سب سے زیادہ ملتی ہے...","وائٹ بورڈ","گھنٹی","دستکاری کی میز"],
+["سبق کی منصوبہ بندی میں میرا پہلا قدم ہوتا ہے...","خاکہ یا مائنڈ میپ بنانا","سوچنا کہ کیا کہنا ہے","طے کرنا کہ طلبہ کیا کریں گے"],
+["بڑے دن سے پہلے گھبراہٹ کم کرنے کا میرا طریقہ ہے...","سب کچھ اچھا ہوتے ہوئے تصور کرنا","خود سے بات کر کے حوصلہ دینا","ٹہلنا، جسم کھینچنا یا ہاتھ جھٹکنا"],
+["مجھے سب سے آسانی سے یاد رہتا ہے...","دیکھے ہوئے چہرے اور جگہیں","نام اور لوگوں کی کہی ہوئی باتیں","وہ کام جو میں نے کیے یا تجربات"],
+["رائے یا فیڈ بیک کے لیے مجھے پسند ہے...","تحریری نوٹس","گفتگو","پہلے کر کے دکھایا جانا، پھر دوبارہ کوشش"]
+];
+var T={V:{n:"Visual",u:"بصری",c:"var(--V)",e:"👁️"},A:{n:"Auditory",u:"سمعی",c:"var(--A)",e:"🎧"},K:{n:"Kinesthetic",u:"حرکی",c:"var(--K)",e:"🖐️"}};
+var INFO={
+V:["The Storyboarder","You take in the world through pictures, colors and layouts. Seeing the big picture helps things click.",["Mind maps and color-coded notes","Diagrams and charts on the board","Flashcards with drawings","Show an example before asking for work"],
+ "کہانی کا مصور","آپ دنیا کو تصویروں، رنگوں اور ترتیب کے ذریعے سمجھتے ہیں۔ پوری تصویر دیکھ کر بات واضح ہو جاتی ہے۔",["رنگ دار نوٹس اور مائنڈ میپس","بورڈ پر خاکے اور چارٹ","تصویروں والے فلیش کارڈز","کام دینے سے پہلے مثال دکھائیں"]],
+A:["The Conversation Spark","You think best out loud. Talking, listening and stories help ideas stick.",["Think-pair-share","Read-alouds, chants and songs","Explaining ideas to a partner","Discussion circles"],
+ "گفتگو کی چنگاری","آپ بول کر سوچتے ہیں۔ بات چیت، سننا اور کہانیاں آپ کو چیزیں یاد رکھنے میں مدد دیتی ہیں۔",["سوچیں، جوڑی بنائیں، بتائیں","با آواز بلند پڑھنا، نظمیں اور گانے","کسی ساتھی کو سمجھانا","گفتگو کے حلقے"]],
+K:["The Hands-On Builder","You learn by doing. Moving, building and testing ideas turns them into understanding.",["Role-play and acting","Models built from scrap paper","Movement games and stations","Sorting and matching cards"],
+ "ہاتھ سے بنانے والا","آپ کر کے سیکھتے ہیں۔ حرکت کرنا، بنانا اور آزمانا خیالات کو سمجھ میں بدل دیتا ہے۔",["کردار نگاری اور اداکاری","ردی کاغذ سے بنے ماڈل","حرکت والے کھیل اور اسٹیشنز","کارڈز کی چھانٹی اور جوڑ"]],
+VA:["The Storyboarding Talker","You like to see an idea and then talk it through. Pictures and conversation work well together for you.",["Mind maps explained to a partner","Diagrams you describe aloud","Think-pair-share with sketches","Read-alouds with pictures"],
+ "تصویر بنا کر بولنے والا","آپ پہلے بات کو دیکھنا اور پھر اس پر بات کرنا پسند کرتے ہیں۔ تصویر اور گفتگو آپ کے لیے مل کر خوب کام کرتے ہیں۔",["مائنڈ میپ ساتھی کو سمجھانا","خاکے جنہیں آپ بول کر بیان کریں","خاکوں کے ساتھ سوچیں، جوڑی بنائیں، بتائیں","تصویروں کے ساتھ با آواز بلند پڑھنا"]],
+VK:["The Visual Doer","You like to see how something works and then try it yourself. Demonstrations and models suit you.",["Watch a demo, then copy it","Build a model from a diagram","Color-coded sorting cards","Stations with posters and tasks"],
+ "دیکھ کر کرنے والا","آپ پہلے دیکھتے ہیں کہ کوئی چیز کیسے کام کرتی ہے، پھر خود آزماتے ہیں۔ مظاہرے اور ماڈل آپ کے لیے موزوں ہیں۔",["مظاہرہ دیکھیں، پھر دہرائیں","خاکے سے ماڈل بنائیں","رنگ دار چھانٹی کارڈز","پوسٹرز اور کاموں والے اسٹیشنز"]],
+AK:["The Talking Builder","You figure things out by talking while you do. Teamwork and hands-on tasks suit you well.",["Group building challenges","Role-play with discussion","Explain while you make something","Movement games with questions"],
+ "بولتا ہوا بنانے والا","آپ کام کرتے ہوئے بات کر کے چیزیں سمجھتے ہیں۔ ٹیم ورک اور عملی کام آپ کو راس آتے ہیں۔",["گروپ میں تعمیری چیلنجز","گفتگو کے ساتھ کردار نگاری","کچھ بناتے ہوئے سمجھانا","سوالات کے ساتھ حرکت والے کھیل"]],
+VAK:["The All-Rounder","You use sight, sound and movement almost equally. That flexibility is a gift for teaching, because you can reach many learners.",["Plan each lesson with something to see, say and do","Rotate stations: see it, say it, do it","Offer choice in how students show learning","Notice which way each learner leans"],
+ "ہمہ جہت سیکھنے والا","آپ دیکھنے، سننے اور حرکت کو تقریباً برابر استعمال کرتے ہیں۔ یہ لچک تدریس کے لیے نعمت ہے، کیونکہ آپ بہت سے طلبہ تک پہنچ سکتے ہیں۔",["ہر سبق میں دیکھنے، کہنے اور کرنے کی کوئی چیز رکھیں","اسٹیشنز گھمائیں: دیکھو، کہو، کرو","طلبہ کو سیکھنا دکھانے کا اختیار دیں","دیکھیں کہ ہر طالب علم کا جھکاؤ کس طرف ہے"]]};
+var $=function(i){return document.getElementById(i)};
+var B=function(e,u){return '<span class="en">'+e+'</span><span class="ur" lang="ur" dir="rtl">'+u+'</span>'};
+var ans=[],cur=0,orders=[];
+document.querySelectorAll("[data-b]").forEach(function(el){var p=el.getAttribute("data-b").split("|");el.innerHTML=B(p[0],p[1])});
+document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){document.body.setAttribute("data-lang",b.dataset.l);document.querySelectorAll(".lang button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")})}});
+function show(id){["start","quiz","result"].forEach(function(s){$(s).hidden=s!==id});window.scrollTo(0,0)}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function render(){
+ var q=QS[cur],u=QU[cur],n=QS.length;$("count").innerHTML=B("Question "+(cur+1)+" of "+n,"سوال "+(cur+1)+" از "+n);$("fun").hidden=!q[1];
+ $("prog").style.width=(cur/n*100)+"%";$("qtext").innerHTML=B(q[0],u[0]);
+ if(!orders[cur])orders[cur]=shuffle(["V","A","K"]);
+ var box=$("opts");box.innerHTML="";
+ orders[cur].forEach(function(t){var i={V:2,A:3,K:4}[t],b=document.createElement("button");b.className="opt"+(ans[cur]===t?" on":"");b.innerHTML=B(q[i],u[i-1]);
+  b.onclick=function(){ans[cur]=t;b.className="opt on";setTimeout(next,matchMedia("(prefers-reduced-motion:reduce)").matches?0:300)};box.appendChild(b)});
+ $("back").hidden=cur===0;
+}
+function next(){if(cur<QS.length-1){cur++;render()}else finish()}
+function finish(){
+ var s={V:0,A:0,K:0};ans.forEach(function(t){s[t]++});var n=QS.length,max=Math.max(s.V,s.A,s.K);
+ var top=["V","A","K"].filter(function(k){return max-s[k]<=1}).join("");
+ var f=INFO[top.length===3?"VAK":top];
+ $("emoji").textContent=top.length===3?"🌈":top.split("").map(function(k){return T[k].e}).join(" ");
+ $("persona").innerHTML=B(f[0],f[3]);$("blurb").innerHTML=B(f[1],f[4]);
+ $("tips").innerHTML=f[2].map(function(t,i){return"<li>"+B(t,f[5][i])+"</li>"}).join("");
+ var ch=$("chart");ch.innerHTML="";var te=[],tu=[];
+ ["V","A","K"].forEach(function(k){var p=Math.round(s[k]/n*100);te.push(T[k].n+" "+p+"%");tu.push(T[k].u+" "+p+"%");
+  var r=document.createElement("div");r.className="row";r.innerHTML='<span>'+B(T[k].n,T[k].u)+'</span><div class="track"><b style="background:'+T[k].c+'"></b></div><em>'+p+'%</em>';ch.appendChild(r);
+  setTimeout(function(){r.querySelector("b").style.width=p+"%"},60)});
+ window.RES="I took the learning preference quiz. I'm "+f[0]+": "+te.join(", ")+".\nمیں نے سیکھنے کے انداز کا کوئز دیا۔ میں ہوں "+f[3]+": "+tu.join("، ")+"۔";
+ $("toast").textContent="";show("result");
+}
+$("go").onclick=function(){ans=[];orders=[];cur=0;show("quiz");render()};
+$("back").onclick=function(){if(cur>0){cur--;render()}};
+$("again").onclick=function(){show("start")};
+$("copy").onclick=function(){
+ var done=function(){$("toast").innerHTML=B("Copied. Paste it into your group chat.","کاپی ہو گیا۔ اپنے گروپ چیٹ میں پیسٹ کریں۔")};
+ var fb=function(){$("toast").innerHTML=B("Copying is blocked here. Select and copy this text:","یہاں کاپی کرنا بلاک ہے۔ یہ متن منتخب کر کے کاپی کریں:")+"<textarea readonly rows=4></textarea>";var ta=$("toast").querySelector("textarea");ta.value=window.RES;ta.select()};
+ try{navigator.clipboard.writeText(window.RES).then(done,fb)}catch(e){fb()}
+};
+</script></body></html>
